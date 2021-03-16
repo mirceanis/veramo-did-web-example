@@ -10,11 +10,9 @@ export const agent = createAgent<IResolver>({
   plugins: [
     new DIDResolverPlugin({
       resolver: new Resolver({
-        key: uniresolver,
+//         key: uniresolver,
         web: uniresolver,
-        ethr: uniresolver,
-        "ethr:rinkeby": uniresolver,
-        "ethr:goerli": uniresolver,
+//         ethr: uniresolver,
       }),
     }),
   ],
@@ -22,7 +20,7 @@ export const agent = createAgent<IResolver>({
 
 (async () => {
   const doc = await agent.resolveDid({
-    didUrl: "did:key:z6MkmbTn4thCFgbRXif7MAN7KwveCyUCQLqSEyHxRCJRmiqP",
+    didUrl: "did:web:did.actor:alice",
   });
 
   console.log(doc);
